@@ -99,7 +99,7 @@
 }
 
 .unit_name_greeting {
-    background-image: url("../images/greeting.png");
+    background-image: url("../images/greeting.webp");
     filter: grayscale(100%);
     background-position: center;
     background-size: contain;
@@ -110,22 +110,32 @@
     filter: grayscale(0%);
 }
 
-.unit_name_about {
-    background-color: #555555;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/static.gif");
+.unit__video-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: -1;
 }
 
 .unit_name_about__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    vertical-align: middle;
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.unit_name_about__text {
     color: white;
     text-transform: lowercase;
     font-weight: bolder;
     font-size: 30px;
     text-align: center;
-    padding: 30px;
-    vertical-align: middle;
 }
 
 .unit_name_skills {
@@ -139,7 +149,7 @@
 
 .unit_name_experience {
     background-color: #777777;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/experience.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/experience.webp");
     background-position: center;
     background-position: contain;
     color: white;
@@ -185,7 +195,7 @@
     padding: 30px;
     box-sizing: border-box;
     filter: grayscale(95%);
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/hobbies.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/hobbies.webp");
     background-position: center;
 }
 
