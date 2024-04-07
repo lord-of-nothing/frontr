@@ -111,6 +111,7 @@
 }
 
 .unit__video-bg {
+    margin: 0px;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -119,6 +120,8 @@
 }
 
 .unit_name_about__content {
+    box-sizing: border-box;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
