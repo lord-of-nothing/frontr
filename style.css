@@ -36,24 +36,29 @@
     width: 50%;
 }
 
-.unit_width_small {
-    width: 25%;
+.unit_width_third {
+    width: 30%;
+}
+
+.unit_width_near_third {
+    width: 40%;
 }
 
 .unit__progress {
+    margin-top: 5px;;
     border: 1px solid white;
-    height: 30px;
+    height: 25px;
     width: 100%;
     display: flex;
 }
 
 .unit__progress_completed {
-    background-color: white;
+    background-color: #999999;
     height: 100%;;
 }
 
 .unit__progress_todo {
-    background-color: white;
+    background-color: #999999;
     height: 100%;
     /* display: inline; */
     animation: blink 1s step-start infinite;
@@ -102,7 +107,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-image: url("images/static.gif"); */
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/static.gif");
 }
 
@@ -117,19 +121,64 @@
 }
 
 .unit_name_skills {
-    background-color: #333333;
+    background-color: #111111;
     box-sizing: border-box;
     padding: 30px;
-    font-size: 30px;
+    font-size: 25px;
     color: white;
 }
 
+
 .unit_name_experience {
     background-color: #777777;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/experience.jpg");
+    background-position: center;
+    background-position: contain;
+    color: white;
+    padding: 30px;
+    box-sizing: border-box;
+    font-size: 25px;
+    position: relative;
+}
+
+.unit_name_experience__content {
+    width: 100%;
+    height: 100%;
+}
+
+.unit_name_experience__hidden {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    color: white;
+    text-transform: lowercase;
+    font-size: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-bottom: 10px;
+}
+
+.unit_name_experience__hidden:hover {
+    opacity: 0.6;
 }
 
 .unit_name_hobbies {
-    background-color: #111111;
+    background-color: #333333;
+    color: white;
+    font-size: 25px;
+    padding: 30px;
+    box-sizing: border-box;
+    filter: grayscale(95%);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/hobbies.jpg");
+    background-position: center;
 }
 
 .footer {
