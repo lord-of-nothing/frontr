@@ -28,7 +28,7 @@
     height: 100%;
     padding: 30px;
     box-sizing: border-box;
-    font-size: 25px;
+    font-size: 20px;
     color: white;
 }
 
@@ -107,7 +107,7 @@
     align-items: center;
     color: white;
     text-transform: lowercase;
-    font-size: 35px;
+    font-size: 34px;
     text-align: center;
     box-sizing: border-box;
     padding: 20px;
@@ -130,7 +130,7 @@
     vertical-align: middle;
     text-transform: lowercase;
     font-weight: bolder;
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
 }
 
@@ -166,7 +166,7 @@
     justify-content: flex-start;
     color: white;
     text-transform: lowercase;
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
     box-sizing: border-box;
     opacity: 0;
