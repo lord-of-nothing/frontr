@@ -863,34 +863,47 @@
 
     .gallery-mobile__image {
         width: 100%;
+        height: 100%;
     }
 
     .gallery-mobile__image_1 {
+        width: 100%;
+        height: 100%;
         grid-column: 1;
         grid-row: 1;
     }
 
     .gallery-mobile__image_2 {
+        width: 100%;
+        height: 100%;
         grid-column: 2;
         grid-row: 1;
     }
 
     .gallery-mobile__image_3 {
+        width: 100%;
+        height: 100%;
         grid-column: 1;
         grid-row: 2;
     }
 
     .gallery-mobile__image_4 {
+        width: 100%;
+        height: 100%;
         grid-column: 2;
         grid-row: 2;
     }
 
     .gallery-mobile__image_5 {
+        width: 100%;
+        height: 100%;
         grid-column: 1;
         grid-row: 3;
     }
 
     .gallery-mobile__image_6 {
+        width: 100%;
+        height: 100%;
         grid-column: 2;
         grid-row: 4;
     }
