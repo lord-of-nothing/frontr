@@ -252,7 +252,9 @@ function feed() {
 
     function ValidateSecret() {
         const error = feedback.querySelector(`.feedback__error_secret`);
-        if (secretField.value) {
+        // from https://stackoverflow.com/a/57132397
+        const regex = /^[~`!@#$%^&*()_+=[\]\\{}|;':",.\/<>?a-zA-Z0-9-]+$/;
+        if (secretField.value && regex.test(secretField.value)) {
             error.classList.remove("feedback__error_active");
             fieldsGood[4] = true;
         } else {
