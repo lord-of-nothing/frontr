@@ -35,10 +35,10 @@ function NextImage() {
         leftImage.classList.remove("gallery__animation_left-to-previous");
         rightImage.classList.remove("gallery__animation_right-to-left");
         nextImage.classList.remove("gallery__animation_next-to-right");
-        prevImage.innerHTML = `<img src="images/${currentImage}.png" class="gallery__image"></img>`;
-        leftImage.innerHTML = `<img src="images/${currentImage + 1}.png" class="gallery__image"></img>`;
-        rightImage.innerHTML = `<img src="images/${currentImage + 2}.png" class="gallery__image"></img>`;
-        nextImage.innerHTML = `<img src="images/${currentImage + 3}.png" class="gallery__image"></img>`;
+        prevImage.innerHTML = `<img src="images/${currentImage}.webp" class="gallery__image"></img>`;
+        leftImage.innerHTML = `<img src="images/${currentImage + 1}.webp" class="gallery__image"></img>`;
+        rightImage.innerHTML = `<img src="images/${currentImage + 2}.webp" class="gallery__image"></img>`;
+        nextImage.innerHTML = `<img src="images/${currentImage + 3}.webp" class="gallery__image"></img>`;
         ++currentImage;
         if (currentImage < (imageCount - 1)) {
             nextButton.classList.remove("gallery__move-button_inactive");
@@ -66,10 +66,10 @@ function PreviousImage() {
         prevImage.classList.remove("gallery__animation_previous-to-left");
         leftImage.classList.remove("gallery__animation_left-to-right");
         rightImage.classList.remove("gallery__animation_right-to-next");
-        prevImage.innerHTML = `<img src="images/${currentImage - 2}.png" class="gallery__image"></img>`;
-        leftImage.innerHTML = `<img src="images/${currentImage - 1}.png" class="gallery__image"></img>`;
-        rightImage.innerHTML = `<img src="images/${currentImage}.png" class="gallery__image"></img>`;
-        nextImage.innerHTML = `<img src="images/${currentImage + 1}.png" class="gallery__image"></img>`;
+        prevImage.innerHTML = `<img src="images/${currentImage - 2}.webp" class="gallery__image"></img>`;
+        leftImage.innerHTML = `<img src="images/${currentImage - 1}.webp" class="gallery__image"></img>`;
+        rightImage.innerHTML = `<img src="images/${currentImage}.webp" class="gallery__image"></img>`;
+        nextImage.innerHTML = `<img src="images/${currentImage + 1}.webp" class="gallery__image"></img>`;
         nextButton.classList.remove("gallery__move-button_inactive");
         nextButton.classList.add("gallery__move-button_active");
         --currentImage;
@@ -94,7 +94,7 @@ gallery.querySelector(".gallery__move-button_left").addEventListener('click', Pr
 
 function OpenGallery() {
     const img = this.querySelector("img");
-    const imgNumber = Number(img.getAttribute("src").slice(-5)[0]);
+    const imgNumber = Number(img.getAttribute("src").slice(-6)[0]);
     if (imgNumber === imageCount) {
         if (!isInverted) {
             invert();
@@ -134,9 +134,9 @@ function ModalNextImage(e) {
     middleman.classList.add("gallery-modal-switch");
     setTimeout(() => middleman.classList.remove("gallery-modal-switch"), 500);
     const img = galleryModal.querySelector("img");
-    let imgNumber = Number(img.getAttribute("src").slice(-5)[0]);
+    let imgNumber = Number(img.getAttribute("src").slice(-6)[0]);
     ++imgNumber;
-    galleryModal.innerHTML = `<img src="images/${imgNumber}.png" class="gallery__image"></img>`;
+    galleryModal.innerHTML = `<img src="images/${imgNumber}.webp" class="gallery__image"></img>`;
     arrowLeft.classList.remove("gallery-modal-arrow_disabled");
     if (imgNumber === (imageCount - 1)) {
         arrowRight.classList.add("gallery-modal-arrow_disabled");
@@ -152,9 +152,9 @@ function ModalPreviousImage(e) {
     middleman.classList.add("gallery-modal-switch");
     setTimeout(() => middleman.classList.remove("gallery-modal-switch"), 500);
     const img = galleryModal.querySelector("img");
-    let imgNumber = Number(img.getAttribute("src").slice(-5)[0]);
+    let imgNumber = Number(img.getAttribute("src").slice(-6)[0]);
     --imgNumber;
-    galleryModal.innerHTML = `<img src="images/${imgNumber}.png" class="gallery__image"></img>`;
+    galleryModal.innerHTML = `<img src="images/${imgNumber}.webp" class="gallery__image"></img>`;
     arrowRight.classList.remove("gallery-modal-arrow_disabled");
     if (imgNumber === 1) {
         arrowLeft.classList.add("gallery-modal-arrow_disabled");
