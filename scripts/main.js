@@ -225,20 +225,22 @@ function feed() {
     }
 
     function ToggleSubmit() {
-
-        if (fieldsGood.every(c => c === true)) {
-            submitButton.textContent = "I'm done";
-            submitButton.removeAttribute("disabled");
-        } else {
-            submitButton.textContent = "not yet";
-            submitButton.setAttribute("disabled", true);
-        }
+        // if (fieldsGood.every(c => c === true)) {
+        //     submitButton.textContent = "I'm done";
+        //     // submitButton.classList.remove("feedback__button_disabled");
+        //     return true;
+        // } else {
+        //     // submitButton.textContent = "not yet";
+        //     submitButton.classList.remove("feedback__button_disabled");
+        //     return false;
+        // }
+        return (fieldsGood.every(c => c === true));;
     }
 
     function ValidateEmail() {
         const error = feedback.querySelector(".feedback__error_email");
         // console.log("called");
-        if (this.value && emailField.validity.valid) {
+        if (emailField.value && emailField.validity.valid) {
             error.classList.remove("feedback__error_active");
             fieldsGood[0] = true;
         } else {
@@ -250,7 +252,7 @@ function feed() {
 
     function ValidateSecret() {
         const error = feedback.querySelector(`.feedback__error_secret`);
-        if (this.value) {
+        if (secretField.value) {
             error.classList.remove("feedback__error_active");
             fieldsGood[4] = true;
         } else {
@@ -262,7 +264,7 @@ function feed() {
 
     function ValidateName() {
         const error = feedback.querySelector(`.feedback__error_true-name`);
-        if (this.value) {
+        if (nameField.value) {
             fieldsGood[1] = true;
             error.classList.remove("feedback__error_active");
         } else {
@@ -293,6 +295,7 @@ function feed() {
             fieldsGood[3] = false;
             error.classList.add("feedback__error_active");
         }
+        ToggleSubmit();
     }
 
     function ValidateOpinion() {
@@ -308,23 +311,36 @@ function feed() {
         ToggleSubmit();
     }
 
+    function Validate() {
+        ValidateEmail();
+        ValidateName();
+        ValidateSong();
+        ValidateColor();
+        ValidateSecret();
+        ValidateOpinion();
+        return ToggleSubmit();
+    }
+
     const emailField = feedback.querySelector("#email");
-    emailField.addEventListener("focusout", ValidateEmail);
+    // emailField.addEventListener("focusout", ValidateEmail);
 
     const nameField = feedback.querySelector("#true-name");
-    nameField.addEventListener("focusout", ValidateName);
+    // nameField.addEventListener("focusout", ValidateName);
 
     const songField = feedback.querySelector("#song");
-    songField.addEventListener("focusout", ValidateSong);
+    // songField.addEventListener("focusout", ValidateSong);
+
+    const artistField = feedback.querySelector("#song");
+    // artistField.addEventListener("focusout", ValidateSong);
 
     const colorField = feedback.querySelector("#color");
-    colorField.addEventListener("focusout", ValidateColor);
+    // colorField.addEventListener("focusout", ValidateColor);
 
     const secretField = feedback.querySelector("#secret");
-    secretField.addEventListener("focusout", ValidateSecret);
+    // secretField.addEventListener("focusout", ValidateSecret);
 
     const opinionField = feedback.querySelector("#joost");
-    opinionField.addEventListener("focusout", ValidateOpinion);
+    // opinionField.addEventListener("focusout", ValidateOpinion);
 
     function submit() {
         submitButton.setAttribute("disabled", true);
@@ -346,7 +362,7 @@ function feed() {
                         CloseForm();
                     }, 3000);
                 } else {
-                    submitButton.removeAttribute("disabled");
+                    // submitButton.removeAttribute("disabled");
                     submitButton.textContent = "no one heard you, try again";
                 }
             })
@@ -356,7 +372,9 @@ function feed() {
     const submitButton = feedback.querySelector(".feedback__button");
     submitButton.addEventListener("click", (e) => {
         e.preventDefault();
-        submit();
+        if (Validate()) {
+            submit();
+        }
     })
 
     feedbackModalContainer.addEventListener("click", CloseForm);
@@ -444,7 +462,7 @@ window.addEventListener("scroll", () => {
     const header = document.querySelector(".header");
     const scrolled = document.documentElement.scrollTop;
 
-    if (scrolled >= header.style.height + 1) {
+    if (scrolled >= window.innerHeight) {
         header.classList.add("header_sticky");
     } else {
         header.classList.remove("header_sticky");
