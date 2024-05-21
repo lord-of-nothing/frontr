@@ -70,6 +70,7 @@
     position: absolute;
     object-fit: cover;
     z-index: -1;
+    background-image: url("../images/static-static.webp");
 }
 
 .block__progress {
@@ -89,7 +90,6 @@
 .block__progress_todo {
     background-color: #999999;
     height: 100%;
-    /* display: inline; */
     animation: blink 1s step-start infinite;
 }
 
@@ -226,7 +226,6 @@
 .gallery-title {
     height: 100%;
     width: 25%;
-    /* background-image: url("../images/gallery-title_bg.webp"); */
     background-image: url("../images/fun_bg.webp");
     background-size: cover;
     display: flex;
@@ -304,7 +303,6 @@
     width: calc(var(--rel-height) * 0.8);
     right: calc((100% - var(--rel-height) * 1.8) / 3);
     filter: brightness(50%);
-    /* box-shadow: 0px 0px 5px 1px #fff; */
 }
 
 @keyframes left-to-previous {
@@ -325,7 +323,6 @@
         bottom: 0;
         width: var(--rel-height);
         filter: brightness(100%);
-        /* box-shadow: none; */
     }
 }
 
@@ -373,7 +370,6 @@
         width: calc(var(--rel-height) * 0.8);
         left: calc((100% - var(--rel-height) * 1.8) / 3 * 2 + var(--rel-height));
         filter: brightness(50%);
-        /* box-shadow: 0px 0px 5px 1px #fff; */
     }
 }
 
@@ -499,15 +495,12 @@
     width: 1000px;
     height: 90vh;
     background-color: black;
-    /* border: 1px dotted white; */
     box-sizing: border-box;
-    /* padding: 20px; */
 }
 
 .feedback {
     font-size: 25px;
     box-sizing: border-box;
-    /* border: 1px solid green; */
     color: white;
     display: flex;
     flex-direction: column;
