@@ -43,10 +43,10 @@ function NextImage() {
     leftImage.classList.remove("gallery__animation_left-to-previous");
     rightImage.classList.remove("gallery__animation_right-to-left");
     nextImage.classList.remove("gallery__animation_next-to-right");
-    prevImage.innerHTML = `<img src="images/${galleryCurrentImage}.webp" class="gallery__image"></img>`;
-    leftImage.innerHTML = `<img src="images/${galleryCurrentImage + 1}.webp" class="gallery__image"></img>`;
-    rightImage.innerHTML = `<img src="images/${galleryCurrentImage + 2}.webp" class="gallery__image"></img>`;
-    nextImage.innerHTML = `<img src="images/${galleryCurrentImage + 3}.webp" class="gallery__image"></img>`;
+    prevImage.innerHTML = `<img src="images/${galleryCurrentImage}.webp" class="gallery__image" alt="image was destroyed"></img>`;
+    leftImage.innerHTML = `<img src="images/${galleryCurrentImage + 1}.webp" class="gallery__image" alt="image was destroyed"></img>`;
+    rightImage.innerHTML = `<img src="images/${galleryCurrentImage + 2}.webp" class="gallery__image" alt="image was destroyed"></img>`;
+    nextImage.innerHTML = `<img src="images/${galleryCurrentImage + 3}.webp" class="gallery__image" alt="image was destroyed"></img>`;
     ++galleryCurrentImage;
     if (galleryCurrentImage < (galleryImageCount - 1)) {
       nextButton.classList.remove("gallery__move-button_inactive");
@@ -83,10 +83,10 @@ function PreviousImage() {
     prevImage.classList.remove("gallery__animation_previous-to-left");
     leftImage.classList.remove("gallery__animation_left-to-right");
     rightImage.classList.remove("gallery__animation_right-to-next");
-    prevImage.innerHTML = `<img src="images/${galleryCurrentImage - 2}.webp" class="gallery__image"></img>`;
-    leftImage.innerHTML = `<img src="images/${galleryCurrentImage - 1}.webp" class="gallery__image"></img>`;
-    rightImage.innerHTML = `<img src="images/${galleryCurrentImage}.webp" class="gallery__image"></img>`;
-    nextImage.innerHTML = `<img src="images/${galleryCurrentImage + 1}.webp" class="gallery__image"></img>`;
+    prevImage.innerHTML = `<img src="images/${galleryCurrentImage - 2}.webp" class="gallery__image" alt="image was destroyed"></img>`;
+    leftImage.innerHTML = `<img src="images/${galleryCurrentImage - 1}.webp" class="gallery__image" alt="image was destroyed"></img>`;
+    rightImage.innerHTML = `<img src="images/${galleryCurrentImage}.webp" class="gallery__image" alt="image was destroyed"></img>`;
+    nextImage.innerHTML = `<img src="images/${galleryCurrentImage + 1}.webp" class="gallery__image" alt="image was destroyed"></img>`;
     nextButton.classList.remove("gallery__move-button_inactive");
     nextButton.classList.add("gallery__move-button_active");
     --galleryCurrentImage;
@@ -125,7 +125,7 @@ function OpenGallery() {
   }
   document.documentElement.classList.add("page_inactive");
   galleryModalContainer.classList.add("modal_active");
-  galleryModal.innerHTML = `<img src="${img.getAttribute('src')}" class="gallery__image"></img>`;
+  galleryModal.innerHTML = `<img src="${img.getAttribute('src')}" class="gallery__image" alt="image was destroyed"></img>`;
 }
 
 function CloseGallery() {
@@ -161,7 +161,7 @@ function ModalNextImage(e) {
   const img = galleryModal.querySelector("img");
   let imgNumber = Number(img.getAttribute("src").slice(-6)[0]);
   ++imgNumber;
-  galleryModal.innerHTML = `<img src="images/${imgNumber}.webp" class="gallery__image"></img>`;
+  galleryModal.innerHTML = `<img src="images/${imgNumber}.webp" class="gallery__image" alt="image was destroyed"></img>`;
   arrowLeft.classList.remove("gallery-modal-arrow_disabled");
   if (imgNumber === (galleryImageCount - 1)) {
     arrowRight.classList.add("gallery-modal-arrow_disabled");
@@ -184,7 +184,7 @@ function ModalPreviousImage(e) {
   const img = galleryModal.querySelector("img");
   let imgNumber = Number(img.getAttribute("src").slice(-6)[0]);
   --imgNumber;
-  galleryModal.innerHTML = `<img src="images/${imgNumber}.webp" class="gallery__image"></img>`;
+  galleryModal.innerHTML = `<img src="images/${imgNumber}.webp" class="gallery__image" alt="image was destroyed"></img>`;
   arrowRight.classList.remove("gallery-modal-arrow_disabled");
   if (imgNumber === 1) {
     arrowLeft.classList.add("gallery-modal-arrow_disabled");
