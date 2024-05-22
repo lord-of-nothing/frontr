@@ -84,13 +84,16 @@
 .block__progress_completed {
 	background-color: #999999;
 	height: 100%;
-	;
 }
 
 .block__progress_todo {
 	background-color: #999999;
 	height: 100%;
 	animation: blink 1s step-start infinite;
+}
+
+.block__progress-container {
+	width: 100%;
 }
 
 .block__progress__percentage {

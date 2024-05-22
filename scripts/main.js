@@ -478,6 +478,25 @@ function init() {
       invert();
     }
   });
+
+  let progressBarList = document.querySelectorAll(".block__progress_completed");
+  const progressBarWidth = document.querySelector(".block__progress").offsetWidth;
+  [].forEach.call(progressBarList, (bar) => {
+    let expansion = setInterval(() => {
+      const maxPercentage = new Number(bar.getAttribute("data-percentage"));
+      const reqWidth = progressBarWidth * maxPercentage / 100;
+      const step = reqWidth / 100;
+      if (bar.offsetWidth >= reqWidth) {
+        bar.style.width = `${maxPercentage}%`;
+        clearInterval(expansion);
+      } else {
+        let tmp = Number(bar.style.width.slice(0, -2));
+        console.log(bar.style.width);
+        bar.style.width = `${tmp + step}px`;
+      }
+    }, 1);
+  }
+  )
 }
 
 init();
